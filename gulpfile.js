@@ -25,7 +25,11 @@ gulp.task('lint', function()
 // Compile LESS in source folder
 gulp.task('less-source', function()
 {
-	return gulp.src('./src/less/style.less')
+	return gulp.src(
+		[
+			'./src/less/style.less',
+			'./src/less/frame.less'
+		])
 		.pipe(less())
 		.pipe(gulp.dest('./src/css'));
 });
@@ -112,5 +116,5 @@ gulp.task('build-copy-images', function()
 });
 
 // Build task: Build HTML, javascript and LESS and copy fonts and images
-gulp.task('build', ['clean', 'build-html', 'build-js-libs', 'build-js-app', 'build-less', 
+gulp.task('build', ['clean', 'build-html', 'build-js-libs', 'build-js-app', 'build-less',
 	'build-copy-fonts', 'build-copy-images' ]);
