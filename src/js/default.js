@@ -9,7 +9,14 @@
     { path: '/success', name: 'success', component: ns.components.Success }
   ];
 
-  var router = new VueRouter({ routes: routes });
+  var router = new VueRouter(
+  {
+    routes: routes,
+    scrollBehavior: function(to, from, savedPositions)
+    {
+      return { x: 0, y: 0 };
+    }
+  });
 
   // Root instance
   var climateQuest = new Vue(

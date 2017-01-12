@@ -69,6 +69,7 @@ h2
   margin: @spacing-small 0;
   padding: @spacing-small;
   text-transform: uppercase;
+  transition: background-color 0.3s ease;
   width: 100%;
 
   &:hover, &.btn-primary
@@ -144,4 +145,19 @@ h2
     opacity: 0;
     stroke-width: 2.0rem;
   }
+}
+
+// -----------------------------------------------------------------------------------------------
+//  Transitions
+// -----------------------------------------------------------------------------------------------
+
+// Fade in & out
+.fade-enter-active, .fade-leave-active
+{
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter, .fade-leave-active
+{
+  opacity: 0;
 }
