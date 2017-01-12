@@ -118,7 +118,30 @@ h2
 //  Data
 // -----------------------------------------------------------------------------------------------
 
-.data-canvas
+.ct-series-a .ct-line, .ct-series-a .ct-point
 {
-  height: 200px;
+  stroke: @core-color;
+  stroke-linecap: round;
+  stroke-width: 0.2rem;
+}
+
+.ct-series-b .ct-line, .ct-series-b .ct-point
+{
+  stroke: fade(@core-light-color, 30%);
+  stroke-linecap: round;
+  stroke-width: 0.2rem;
+}
+
+@keyframes pulse
+{
+  0%
+  {
+    opacity: 1.0;
+    stroke-width: 0.2rem;
+  }
+  100%
+  {
+    opacity: 0;
+    stroke-width: 2.0rem;
+  }
 }
