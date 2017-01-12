@@ -2,22 +2,92 @@
 //  General configuration
 // -----------------------------------------------------------------------------------------------
 
-body
+html, body, main
 {
-  padding: 5.0rem;
+  height: 100%;
+  width: 100%;
 }
 
+
 // -----------------------------------------------------------------------------------------------
-//  Device appearance
+//  Typography
 // -----------------------------------------------------------------------------------------------
 
-.device-wrapper
+h1
 {
-  text-align: center;
-}
-
-.marvel-device
-{
-  display: inline-block;
+  font-size: @body-font-size * 2.5;
+  margin: (@spacing-large * 2) 0;
   position: relative;
+
+  &:after
+  {
+    background-color: @core-color;
+    bottom: (-@spacing-large);
+    content: ' ';
+    height: 0.2rem;
+    left: 40%;
+    position: absolute;
+    width: 20%;
+  }
+}
+
+h2
+{
+  color: fade(@body-font-color, 70%);
+  margin: @spacing-small 0;
+}
+
+.subtitle
+{
+  font-size: @body-font-size;
+  text-transform: uppercase;
+
+  & + h1
+  {
+    margin-top: 0;
+  }
+}
+
+// -----------------------------------------------------------------------------------------------
+//  Common elements
+// -----------------------------------------------------------------------------------------------
+
+.btn
+{
+  background: transparent;
+  border-radius: @border-radius;
+  border-width: 0.2rem;
+  color: @core-light-color;
+  height: auto;
+  margin: @spacing-small 0;
+  padding: @spacing-small;
+  text-transform: uppercase;
+  width: 100%;
+
+  &:hover
+  {
+    background-color: @core-color;
+    border-color: @core-color;
+  }
+}
+
+.btn-primary
+{
+  background-color: @core-color;
+  border-color: @core-color;
+}
+
+.content-box
+{
+  background-color: @core-light-color;
+  border-radius: @border-radius;
+  color: @core-dark-color;
+  margin: @spacing-medium 0;
+  padding: @spacing-small;
+  text-align: left;
+
+  &+*
+  {
+    margin-top: 0;
+  }
 }
