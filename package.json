@@ -1,0 +1,33 @@
+{
+  "name": "climate-quest",
+  "version": "0.1.0",
+  "description": "Quick'n'dirty prototype for a gamified approach on counteracting climate change.",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-less": "^3.3.0",
+    "gulp-replace": "^0.5.4",
+    "gulp-uglify": "^2.0.0",
+    "jshint": "^2.9.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anphil/climate-quest.git"
+  },
+  "author": "Andreas Philippi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anphil/climate-quest/issues"
+  },
+  "homepage": "https://github.com/anphil/climate-quest#readme"
+}

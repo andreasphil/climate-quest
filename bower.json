@@ -1,0 +1,19 @@
+{
+  "name": "climate-quest",
+  "description": "Quick'n'dirty prototype for a gamified approach on counteracting climate change.",
+  "main": "gulpfile.js",
+  "authors": [
+    "Andreas Philippi"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/components",
+    "test",
+    "tests"
+  ]
+}
