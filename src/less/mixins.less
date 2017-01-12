@@ -1,3 +1,19 @@
 // -----------------------------------------------------------------------------------------------
 //  Mixins
 // -----------------------------------------------------------------------------------------------
+
+.first-child-spacing-reset
+{
+  &>*:first-child { margin-top: 0; }
+}
+
+.last-child-spacing-reset
+{
+  &>*:last-child { margin-bottom: 0; }
+}
+
+.first-last-child-spacing-reset
+{
+  .first-child-spacing-reset;
+  .last-child-spacing-reset;
+}

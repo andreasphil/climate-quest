@@ -33,7 +33,33 @@
           <div class="content-box">
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
           </div>
-          <router-link class="btn" v-bind:to="{ name: 'introduction' }">Get started</router-link>
+          <router-link class="btn"
+            v-bind:to="{ name: 'introduction' }">
+            Get started
+          </router-link>
+        </div>
+      </div>
+    </script>
+
+    <script type="text/x-template" id="introduction-template">
+      <div class="introduction-view">
+        <div class="header">
+          <router-link tag="span"
+            class="float-left icon-cross"
+            v-bind:to="{ name: 'index' }">
+          </router-link>
+          <h2>CO2 Emissions</h2>
+        </div>
+        <div class="data-canvas">
+        </div>
+        <div class="content-wrapper">
+          <div class="content-box">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          </div>
+          <router-link class="btn"
+            v-bind:to="{ name: 'challenge' }">
+            Do Something About It!
+          </router-link>
         </div>
       </div>
     </script>

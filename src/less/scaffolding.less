@@ -8,6 +8,12 @@ html, body, main
   width: 100%;
 }
 
+.content-wrapper
+{
+  .first-last-child-spacing-reset;
+  padding: @spacing-small;
+}
+
 
 // -----------------------------------------------------------------------------------------------
 //  Typography
@@ -48,6 +54,7 @@ h2
   }
 }
 
+
 // -----------------------------------------------------------------------------------------------
 //  Common elements
 // -----------------------------------------------------------------------------------------------
@@ -64,17 +71,11 @@ h2
   text-transform: uppercase;
   width: 100%;
 
-  &:hover
+  &:hover, &.btn-primary
   {
     background-color: @core-color;
     border-color: @core-color;
   }
-}
-
-.btn-primary
-{
-  background-color: @core-color;
-  border-color: @core-color;
 }
 
 .content-box
@@ -90,4 +91,34 @@ h2
   {
     margin-top: 0;
   }
+}
+
+.header
+{
+  background-color: fade(@core-light-color, 10%);
+  left: 0;
+  padding: @spacing-small;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  h2
+  {
+    color: @core-light-color;
+    font-size: (@body-font-size * 1.1);
+    line-height: (6.0rem - (@spacing-small * 2));
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+
+// -----------------------------------------------------------------------------------------------
+//  Data
+// -----------------------------------------------------------------------------------------------
+
+.data-canvas
+{
+  height: 200px;
 }
