@@ -42,10 +42,9 @@
         sequence = 0;
       });
 
-      // Animation of bars building up
+      // Animation of points appearing and lines fading in
       chart.on('draw', function(data)
       {
-        console.log(data);
         data.element.animate(
         {
           opacity:
