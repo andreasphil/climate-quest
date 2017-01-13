@@ -34,7 +34,7 @@
           <h2 class="subtitle">Welcome to</h2>
           <h1>Climate <span class="icon-cloud"></span> Quest</h1>
           <div class="content-box">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            ClimateQuest is a prototype that explores a playful approach of presenting data related to global warming. It presents you with a topic, gives you a related challenge and thereby demonstrates how everyone has the potential to make an impact. You can find our more on <a href="https://github.com/anphil/climate-quest" target="_blank">GitHub</a>.
           </div>
           <router-link class="btn"
             v-bind:to="{ name: 'introduction' }">
@@ -61,7 +61,7 @@
         </div>
         <div class="content-wrapper">
           <div class="content-box">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            Carbon Dioxide is one of the greenhouse gases that contribute to global warming by preventing heat from leaving the Earth's atmosphere. Altough you <strong class="core-color">Swedes</strong> managed to decrease your emissions significantly over the last 20 years, the <strong class="core-light-color">world-wide</strong> average shows that there is still a lot of work to do.
           </div>
           <router-link class="btn"
             v-bind:to="{ name: 'challenge' }">
@@ -87,7 +87,7 @@
         <h1>Shanks's Pony</h1>
         <div class="content-wrapper">
           <div class="content-box">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            One of the main sources of CO2 emissions is the burning of fossil fuels, for example by cars. Therefore, try to walk instead of driving whenever possible. We'll get you started with 10.000 steps today – bonus: It's healthy too!
           </div>
           <router-link class="btn btn-primary"
             v-bind:to="{ name: 'ongoing' }">
@@ -117,7 +117,7 @@
           Simulate
         </button>
         <div class="content-wrapper">
-          <h2 class="subtitle">Progress: {{ status }}%</h2>
+          <h2 class="subtitle">{{ currentSteps }} of {{ totalSteps }} steps</h2>
           <p class="ongoing-status">{{ statusText }}</p>
           <router-link class="btn"
             v-bind:to="{ name: 'success' }"
@@ -149,7 +149,7 @@
         </div>
         <div class="content-wrapper">
           <div class="content-box">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            Good job! If everyone acted like <strong class="core-secondary-color">you</strong> did today, we would reduce this year's <strong class="core-light-color">world-wide</strong> Carbon Dioxide emissions by two thirds, and the <strong class="core-color">Swedish</strong> part by half.
           </div>
           <router-link class="btn disabled"
             v-bind:to="{ name: 'challenge' }">

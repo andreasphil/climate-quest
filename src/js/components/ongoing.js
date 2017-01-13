@@ -7,6 +7,7 @@
     {
       return {
         status: 1,
+        totalSteps: 10000,
         chart: undefined,
         chartOptions:
         {
@@ -50,6 +51,14 @@
           statusText = 'The first step is the hardest.';
 
         return statusText;
+      },
+
+      currentSteps: function()
+      {
+        if (this.status === 1)
+          return 0;
+        else
+          return Math.ceil((this.status / 100) * this.totalSteps);
       }
     },
 
