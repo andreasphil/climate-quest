@@ -125,6 +125,37 @@
       </div>
     </script>
 
+    <!-- Challenge Success Screen -->
+    <script type="text/x-template" id="success-template">
+      <div class="success-view">
+        <div class="header">
+          <router-link tag="span"
+            class="float-left icon-cross"
+            v-bind:to="{ name: 'ongoing' }">
+          </router-link>
+          <router-link tag="span"
+            class="float-right icon-power"
+            v-bind:to="{ name: 'index' }">
+          </router-link>
+          <h2>Well done!</h2>
+        </div>
+        <div class="challenge-header-image">
+          <div class="challenge-header-gradient"></div>
+        </div>
+        <div class="ct-chart ct-major-sixth" id="result-chart">
+        </div>
+        <div class="content-wrapper">
+          <div class="content-box">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          </div>
+          <router-link class="btn disabled"
+            v-bind:to="{ name: 'challenge' }">
+            Give me another challenge!
+          </router-link>
+        </div>
+      </div>
+    </script>
+
     <!-- Scripts -->
     <!-- Replace Scripts -->
 

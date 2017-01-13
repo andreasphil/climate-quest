@@ -1,8 +1,8 @@
 // -----------------------------------------------------------------------------------------------
-//  Introduction page
+//  Success page
 // -----------------------------------------------------------------------------------------------
 
-.introduction-view
+.success-view
 {
   padding: 6.0rem 0 0 0;
 }
@@ -12,16 +12,22 @@
 //  Data
 // -----------------------------------------------------------------------------------------------
 
-.ct-series-a .ct-line, .ct-series-a .ct-point
+.ct-bar
 {
-  stroke: @core-color;
-  stroke-linecap: round;
-  stroke-width: 0.2rem;
+  stroke-width: 3.0rem;
 }
 
-.ct-series-b .ct-line, .ct-series-b .ct-point
+.ct-series-a .ct-bar
 {
   stroke: fade(@core-light-color, 30%);
-  stroke-linecap: round;
-  stroke-width: 0.2rem;
+}
+
+.ct-series-b .ct-bar
+{
+  stroke: @core-color;
+}
+
+.ct-series-c .ct-bar
+{
+  stroke: @core-secondary-color;
 }

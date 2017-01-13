@@ -48,22 +48,10 @@
     6.41430341309402
   ]];
 
-  // Chart configuration
-  ns.data.chartOptions =
-  {
-    showPoint: false,
-    lineSmooth: true,
-    axisX:
-    {
-      offset: 0,
-      showGrid: false,
-      showLabel: false
-    },
-    axisY:
-    {
-      offset: 10,
-      showGrid: false,
-      showLabel: false
-    }
-  };
+  ns.data.result =
+  [
+    [ns.data.co2Emissions[1][19]],
+    [ns.data.co2Emissions[0][19]],
+    [(ns.data.co2Emissions[0][19] / 2)],
+  ];
 })(window);

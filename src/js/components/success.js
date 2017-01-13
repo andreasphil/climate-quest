@@ -1,19 +1,18 @@
 (function(ns)
 {
   ns.components = ns.components || {};
-  ns.components.Introduction = Vue.component('introduction',
+  ns.components.Success = Vue.component('success',
   {
     data: function()
     {
       return {
         chartData:
         {
-          series: ns.data.co2Emissions
+          series: ns.data.result
         },
         chartOptions:
         {
-          showPoint: false,
-          lineSmooth: true,
+          seriesBarDistance: 80,
           axisX:
           {
             offset: 0,
@@ -22,7 +21,7 @@
           },
           axisY:
           {
-            offset: 10,
+            offset: 0,
             showGrid: false,
             showLabel: false
           }
@@ -30,11 +29,11 @@
       };
     },
 
-    template: '#introduction-template',
+    template: '#success-template',
 
     mounted: function()
     {
-      new Chartist.Line('#emissions-chart', this.chartData, this.chartOptions);
+      new Chartist.Bar('#result-chart', this.chartData, this.chartOptions);
     }
   });
 })(window);
