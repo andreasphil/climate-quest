@@ -73,7 +73,10 @@ gulp.task('build-js-libs', function()
 {
 	return gulp.src(
 		[
-			// Insert libraries here
+			'./src/components/jquery/dist/jquery.js',
+			'./src/components/vue/dist/vue.js',
+			'./src/components/vue-router/dist/vue-router.js',
+			'./src/components/chartist/dist/chartist.js'
 		])
 		.pipe(concat('libs.min.js'))
 		.pipe(uglify())
@@ -85,7 +88,13 @@ gulp.task('build-js-app', function()
 {
 	return gulp.src(
 		[
-			// Insert application javascript here
+			'./src/js/components/challenge.js',
+			'./src/js/components/home.js',
+			'./src/js/components/introduction.js',
+			'./src/js/components/ongoing.js',
+			'./src/js/components/success.js',
+			'./src/js/utils/data.js',
+			'./src/js/default.js'
 		])
 		.pipe(concat('application.min.js'))
 		.pipe(uglify())
@@ -95,7 +104,11 @@ gulp.task('build-js-app', function()
 // Compile and compress LESS
 gulp.task('build-less', function()
 {
-	return gulp.src('./src/less/style.less')
+	return gulp.src(
+		[
+			'./src/less/style.less',
+			'./src/less/frame.less',
+		])
 		.pipe(less())
 		.pipe(cleancss())
 		.pipe(gulp.dest('./dist/css'));
@@ -104,8 +117,8 @@ gulp.task('build-less', function()
 // Copy fonts from the fonts folder
 gulp.task('build-copy-fonts', function()
 {
-	return gulp.src('./src/font/*.{eot,svg,ttf,woff,otf}')
-		.pipe(gulp.dest('./dist/font'));
+	return gulp.src('./src/components/feather/webfont/feather-webfont/fonts/*.{eot,svg,ttf,woff,otf}')
+		.pipe(gulp.dest('./dist/components/feather/webfont/feather-webfont/fonts'));
 });
 
 // Copy images from the img folder
