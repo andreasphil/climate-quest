@@ -18,7 +18,7 @@
 
     mounted: function()
     {
-      new Chartist.Line('.ct-chart', this.chartData, this.chartOptions);
+      new Chartist.Line('#emissions-chart', this.chartData, this.chartOptions);
     }
   });
 })(window);

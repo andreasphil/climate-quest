@@ -14,6 +14,7 @@
     routes: routes,
     scrollBehavior: function(to, from, savedPositions)
     {
+      // Scroll to top whenever the path changes
       return { x: 0, y: 0 };
     }
   });

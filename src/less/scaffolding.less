@@ -76,6 +76,24 @@ h2
   {
     background-color: @core-color;
     border-color: @core-color;
+    text-shadow: 0.1rem 0.1rem 0.1rem darken(@core-color, 10%);
+  }
+
+  &.btn-primary:hover
+  {
+    background-color: lighten(@core-color, 10%);
+    border-color: lighten(@core-color, 10%);
+  }
+
+  &.btn-submit
+  {
+    border-color: @core-secondary-color;
+  }
+
+  &.disabled
+  {
+    border-color: @core-light-color;
+    opacity: 0.3;
   }
 }
 
@@ -131,6 +149,16 @@ h2
   stroke: fade(@core-light-color, 30%);
   stroke-linecap: round;
   stroke-width: 0.2rem;
+}
+
+.ct-series-a .ct-slice-donut
+{
+  stroke: @core-secondary-color;
+}
+
+.ct-series-b .ct-slice-donut
+{
+  stroke: fade(@core-light-color, 30%);
 }
 
 @keyframes pulse

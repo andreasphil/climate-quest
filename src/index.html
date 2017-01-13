@@ -27,6 +27,7 @@
     </main>
 
     <!-- Templates -->
+    <!-- Home Screen -->
     <script type="text/x-template" id="home-template">
       <div class="home-view">
         <div class="home-content-wrapper">
@@ -43,6 +44,7 @@
       </div>
     </script>
 
+    <!-- Challenge Introduction Screen -->
     <script type="text/x-template" id="introduction-template">
       <div class="introduction-view">
         <div class="header">
@@ -52,7 +54,7 @@
           </router-link>
           <h2>CO2 Emissions</h2>
         </div>
-        <div class="data-canvas ct-chart ct-major-sixth">
+        <div class="ct-chart ct-major-sixth" id="emissions-chart">
         </div>
         <div class="content-wrapper">
           <div class="content-box">
@@ -66,6 +68,7 @@
       </div>
     </script>
 
+    <!-- Challenge Screen -->
     <script type="text/x-template" id="challenge-template">
       <div class="challenge-view">
         <div class="header">
@@ -83,9 +86,40 @@
           <div class="content-box">
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
           </div>
-          <router-link class="btn"
+          <router-link class="btn btn-primary"
             v-bind:to="{ name: 'ongoing' }">
-            I'll do it!
+            Let's do it!
+          </router-link>
+        </div>
+      </div>
+    </script>
+
+    <!-- Challenge Progress Screen -->
+    <script type="text/x-template" id="ongoing-template">
+      <div class="ongoing-view">
+        <div class="header">
+          <router-link tag="span"
+            class="float-left icon-arrow-left"
+            v-bind:to="{ name: 'challenge' }">
+          </router-link>
+          <h2>Shanks's Pony</h2>
+        </div>
+        <div class="challenge-header-image">
+          <div class="challenge-header-gradient"></div>
+        </div>
+        <div class="ct-chart ct-perfect-fourth" id="progress-chart"></div>
+        <button class="simulation-button"
+          v-on:click="startSimulation">
+          <p><span class="icon-play"></span></p>
+          Simulate
+        </button>
+        <div class="content-wrapper">
+          <h2 class="subtitle">{{ status }}%</h2>
+          <p class="ongoing-status">{{ statusText }}</p>
+          <router-link class="btn"
+            v-bind:to="{ name: 'success' }"
+            v-bind:class="!done ? 'disabled' : ''">
+            Show me the results!
           </router-link>
         </div>
       </div>

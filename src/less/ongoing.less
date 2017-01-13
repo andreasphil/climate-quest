@@ -1,0 +1,40 @@
+// -----------------------------------------------------------------------------------------------
+//  Ongoing chalenge page
+// -----------------------------------------------------------------------------------------------
+
+.ongoing-view
+{
+  padding: 10.0rem 0 0 0;
+  text-align: center;
+}
+
+.ongoing-status
+{
+  font-size: (@body-font-size * 1.2);
+}
+
+.simulation-button
+{
+  background-color: fade(@control-color-warning, 40%);
+  border-radius: @border-radius;
+  border: none;
+  color: @core-light-color;
+  font-family: @body-font-family;
+  left: 30%;
+  outline: none;
+  padding: @spacing-small;
+  position: fixed;
+  top: 17.5rem;
+  transition: background-color 0.3s ease;
+  width: 40%;
+
+  &:hover
+  {
+    background-color: fade(@control-color-warning, 60%)
+  }
+
+  span
+  {
+    font-size: (@body-font-size * 1.5);
+  }
+}
