@@ -7,6 +7,16 @@
   padding: 6.0rem 0 0 0;
 }
 
+.introduction-header-image
+{
+  .challenge-header-image;
+  background-image: url(../img/introduction.png);
+}
+
+.introduction-header-gradient
+{
+  .challenge-header-gradient;
+}
 
 // -----------------------------------------------------------------------------------------------
 //  Data
@@ -14,14 +24,14 @@
 
 .ct-series-a .ct-line, .ct-series-a .ct-point
 {
-  stroke: @core-color;
+  stroke: darken(@core-light-color, 30%);
   stroke-linecap: round;
-  stroke-width: 0.2rem;
+  stroke-width: 0.3rem;
 }
 
 .ct-series-b .ct-line, .ct-series-b .ct-point
 {
-  stroke: fade(@core-light-color, 30%);
+  stroke: @core-color;
   stroke-linecap: round;
-  stroke-width: 0.2rem;
+  stroke-width: 0.3rem;
 }

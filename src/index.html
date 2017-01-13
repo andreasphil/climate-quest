@@ -54,6 +54,9 @@
           </router-link>
           <h2>CO2 Emissions</h2>
         </div>
+        <div class="introduction-header-image">
+          <div class="introduction-header-gradient"></div>
+        </div>
         <div class="ct-chart ct-major-sixth" id="emissions-chart">
         </div>
         <div class="content-wrapper">
@@ -114,7 +117,7 @@
           Simulate
         </button>
         <div class="content-wrapper">
-          <h2 class="subtitle">{{ status }}%</h2>
+          <h2 class="subtitle">Progress: {{ status }}%</h2>
           <p class="ongoing-status">{{ statusText }}</p>
           <router-link class="btn"
             v-bind:to="{ name: 'success' }"
