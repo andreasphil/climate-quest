@@ -33,7 +33,28 @@
 
     mounted: function()
     {
-      new Chartist.Bar('#result-chart', this.chartData, this.chartOptions);
+      var chart = new Chartist.Bar('#result-chart', this.chartData, this.chartOptions);
+      var sequence = 0;
+
+      chart.on('created', function()
+      {
+        sequence = 0;
+      });
+
+      // Animation of bars building up
+      chart.on('draw', function(data)
+      {
+        data.element.animate(
+        {
+          y2:
+          {
+            begin: sequence++ * 500,
+            from: data.y1,
+            to: data.y2,
+            dur: 750
+          }
+        });
+      });
     }
   });
 })(window);

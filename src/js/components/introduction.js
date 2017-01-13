@@ -12,7 +12,7 @@
         },
         chartOptions:
         {
-          showPoint: false,
+          showPoint: true,
           lineSmooth: true,
           axisX:
           {
@@ -34,7 +34,36 @@
 
     mounted: function()
     {
-      new Chartist.Line('#emissions-chart', this.chartData, this.chartOptions);
+      var chart = new Chartist.Line('#emissions-chart', this.chartData, this.chartOptions);
+      var sequence = 0;
+
+      chart.on('created', function()
+      {
+        sequence = 0;
+      });
+
+      // Animation of bars building up
+      chart.on('draw', function(data)
+      {
+        console.log(data);
+        data.element.animate(
+        {
+          opacity:
+          {
+            begin: sequence++ * 30,
+            dur: 750,
+            from: 0,
+            to: 1
+          },
+          y1:
+          {
+            begin: sequence++ * 30,
+            dur: 300,
+            from: chart.container.clientHeight,
+            to: data.y
+          }
+        });
+      });
     }
   });
 })(window);
