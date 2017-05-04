@@ -1,7 +1,7 @@
-(function(ns)
+(function(exports)
 {
-  ns.components = ns.components || {};
-  ns.components.Ongoing = Vue.component('ongoing',
+  exports.components = exports.components || {};
+  exports.components.Ongoing = Vue.component('ongoing',
   {
     data: function()
     {
@@ -14,10 +14,10 @@
           donut: true,
           donutWidth: 10,
           showLabel: false,
-          total: 99
+          total: 9900
         },
         simulation: undefined
-      };
+      }
     },
 
     computed:
@@ -25,40 +25,42 @@
       // Return true if the goal is reached
       done: function()
       {
-        return this.status === 100;
+        return this.status === this.totalSteps
       },
 
       // Return a message depending on the progress
       statusText: function()
       {
-        var statusText;
+        var statusText
 
-        if (this.status === 100)
-          statusText = 'Well done!';
-        else if (this.status >= 90)
-          statusText = 'Almost there!';
-        else if (this.status >= 75)
-          statusText = 'Getting there!';
-        else if (this.status >= 55)
-          statusText = 'Great, keep going!';
-        else if (this.status >= 45)
-          statusText = 'Halfway through!';
-        else if (this.status >= 20)
-          statusText = 'You\'re making progress!';
-        else if (this.status >= 2)
-          statusText = 'Just getting started!';
+        if (this.status >= this.totalSteps)
+          statusText = 'Well done!'
+        else if (this.status >= 9000)
+          statusText = 'Almost there!'
+        else if (this.status >= 7500)
+          statusText = 'Getting there!'
+        else if (this.status >= 5500)
+          statusText = 'Great, keep going!'
+        else if (this.status >= 4500)
+          statusText = 'Halfway through!'
+        else if (this.status >= 2000)
+          statusText = 'You\'re making progress!'
+        else if (this.status >= 200)
+          statusText = 'Just getting started!'
         else
-          statusText = 'The first step is the hardest.';
+          statusText = 'The first step is the hardest.'
 
-        return statusText;
+        return statusText
       },
 
       currentSteps: function()
       {
         if (this.status === 1)
-          return 0;
+          return 0
+        else if (this.status >= this.totalSteps)
+          return this.totalSteps
         else
-          return Math.ceil((this.status / 100) * this.totalSteps);
+          return Math.round(this.status)
       }
     },
 
@@ -69,24 +71,35 @@
       {
         // Reset simulation if it was already played
         if (this.status === 100)
-          this.status = 1;
+          this.status = 1
 
-        var count = function()
+        var countFast = () =>
         {
-          this.status += 1;
+          this.status += 100
 
-          if (this.status === 100)
-            window.clearInterval(this.simulation);
-        }.bind(this);
+          if (this.status >= this.totalSteps)
+            window.clearInterval(this.simulation)
+        }
 
-        this.simulation = window.setInterval(count, 50);
+        var count = () =>
+        {
+          this.status += 1
+
+          if (this.status >= 50)
+          {
+            window.clearInterval(this.simulation)
+            this.simulation = window.setInterval(countFast, 50)
+          }
+        }
+
+        this.simulation = window.setInterval(count, 750)
       },
 
       // Redraw the chart with new data
       updateChart: function(progress)
       {
-        var chartData = { series: [ progress, (this.chartOptions.total - progress) ] };
-        this.chart.update(chartData);
+        var chartData = { series: [ progress, (this.chartOptions.total - progress) ] }
+        this.chart.update(chartData)
       }
     },
 
@@ -95,7 +108,7 @@
       // Update the chart whenever the status changes
       status: function(oldVal, newVal)
       {
-        this.updateChart(newVal);
+        this.updateChart(newVal)
       }
     },
 
@@ -103,8 +116,14 @@
 
     mounted: function()
     {
-      var chartData = { series: [ this.status, (this.chartOptions.total - this.status) ] };
-      this.chart = new Chartist.Pie('#progress-chart', chartData, this.chartOptions);
+      var chartData = { series: [ this.status, (this.chartOptions.total - this.status) ] }
+      this.chart = new Chartist.Pie('#progress-chart', chartData, this.chartOptions)
+
+      window.setTimeout(() =>
+      {
+        alert('Press OK when you\'re ready to start the challenge!')
+        this.startSimulation()
+      }, 200)
     }
-  });
-})(window);
+  })
+})(window)

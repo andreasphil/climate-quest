@@ -1,14 +1,14 @@
-(function(ns)
+(function(exports)
 {
-  ns.components = ns.components || {};
-  ns.components.Success = Vue.component('success',
+  exports.components = exports.components || {};
+  exports.components.Success = Vue.component('success',
   {
     data: function()
     {
       return {
         chartData:
         {
-          series: ns.data.result
+          series: exports.data.result
         },
         chartOptions:
         {

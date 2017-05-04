@@ -1,14 +1,14 @@
-(function(ns)
+(function(exports)
 {
-  ns.components = ns.components || {};
-  ns.components.Introduction = Vue.component('introduction',
+  exports.components = exports.components || {}
+  exports.components.Introduction = Vue.component('introduction',
   {
     data: function()
     {
       return {
         chartData:
         {
-          series: ns.data.co2Emissions
+          series: exports.data.co2Emissions
         },
         chartOptions:
         {
@@ -27,23 +27,20 @@
             showLabel: false
           }
         }
-      };
+      }
     },
 
     template: '#introduction-template',
 
     mounted: function()
     {
-      var chart = new Chartist.Line('#emissions-chart', this.chartData, this.chartOptions);
-      var sequence = 0;
+      var chart = new Chartist.Line('#emissions-chart', this.chartData, this.chartOptions)
+      var sequence = 0
 
-      chart.on('created', function()
-      {
-        sequence = 0;
-      });
+      chart.on('created', () => { sequence = 0 })
 
       // Animation of points appearing and lines fading in
-      chart.on('draw', function(data)
+      chart.on('draw', (data) =>
       {
         data.element.animate(
         {
@@ -61,8 +58,8 @@
             from: chart.container.clientHeight,
             to: data.y
           }
-        });
-      });
+        })
+      })
     }
-  });
-})(window);
+  })
+})(window)

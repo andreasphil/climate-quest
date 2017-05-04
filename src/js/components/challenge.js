@@ -1,8 +1,8 @@
-(function(ns)
+(function(exports)
 {
-  ns.components = ns.components || {};
-  ns.components.Challenge = Vue.component('challenge',
+  exports.components = exports.components || {}
+  exports.components.Challenge = Vue.component('challenge',
   {
     template: '#challenge-template'
-  });
-})(window);
+  })
+})(window)

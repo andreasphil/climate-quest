@@ -1,8 +1,8 @@
-(function(ns)
+(function(exports)
 {
-  ns.components = ns.components || {};
-  ns.components.Home = Vue.component('home',
+  exports.components = exports.components || {}
+  exports.components.Home = Vue.component('home',
   {
     template: '#home-template'
-  });
-})(window);
+  })
+})(window)

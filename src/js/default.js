@@ -1,19 +1,19 @@
-(function(ns)
+(function(exports)
 {
   $(document).ready(() =>
   {
     var routes =
     [
-      { path: '/', name: 'index', component: ns.components.Home },
-      { path: '/introduction', name: 'introduction', component: ns.components.Introduction },
-      { path: '/challenge', name: 'challenge', component: ns.components.Challenge },
-      { path: '/progress', name: 'ongoing', component: ns.components.Ongoing },
-      { path: '/success', name: 'success', component: ns.components.Success }
+      { path: '/', name: 'index', component: exports.components.Home },
+      { path: '/introduction', name: 'introduction', component: exports.components.Introduction },
+      { path: '/challenge', name: 'challenge', component: exports.components.Challenge },
+      { path: '/progress', name: 'ongoing', component: exports.components.Ongoing },
+      { path: '/success', name: 'success', component: exports.components.Success }
     ];
 
     var router = new VueRouter(
     {
-      routes: routes,
+      routes,
       scrollBehavior: function(to, from, savedPositions)
       {
         // Scroll to top whenever the path changes
@@ -24,7 +24,7 @@
     // Root instance
     var climateQuest = new Vue(
     {
-      router: router,
+      router,
       el: '#application'
     });
   })
