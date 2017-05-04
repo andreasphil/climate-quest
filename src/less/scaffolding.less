@@ -11,7 +11,7 @@ html, body, main
 .content-wrapper
 {
   .first-last-child-spacing-reset;
-  padding: @spacing-small;
+  padding: @spacing-small @spacing-small 10.0rem @spacing-small;
 }
 
 
@@ -154,6 +154,17 @@ a
   {
     line-height: (6.0rem - (@spacing-small * 2));
   }
+}
+
+.footer
+{
+  .first-last-child-spacing-reset;
+  background-color: fadeout(@core-dark-color, 10%);
+  bottom: 0;
+  left: 0;
+  padding: @spacing-small;
+  position: fixed;
+  width: 100%;
 }
 
 

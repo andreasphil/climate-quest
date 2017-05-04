@@ -36,6 +36,8 @@
           <div class="content-box">
             ClimateQuest is a prototype that explores a playful approach of presenting data related to global warming. It presents you with a topic, gives you a related challenge and thereby demonstrates how everyone has the potential to make an impact. You can find our more on <a href="https://github.com/anphil/climate-quest" target="_blank">GitHub</a>.
           </div>
+        </div>
+        <div class="footer">
           <router-link class="btn"
             v-bind:to="{ name: 'introduction' }">
             I'm in!
@@ -63,6 +65,8 @@
           <div class="content-box">
             Carbon Dioxide is one of the greenhouse gases that contribute to global warming by preventing heat from leaving the Earth's atmosphere. Altough you <strong class="core-color">Swedes</strong> managed to decrease your emissions significantly over the last 20 years, the <strong class="core-light-color">world-wide</strong> average shows that there is still a lot of work to do.
           </div>
+        </div>
+        <div class="footer">
           <router-link class="btn"
             v-bind:to="{ name: 'challenge' }">
             How can I help?
@@ -89,6 +93,8 @@
           <div class="content-box">
             One of the main sources of CO2 emissions is the burning of fossil fuels, for example by cars. Therefore, try to walk instead of driving whenever possible. We'll get you started with 10.000 steps today – bonus: It's healthy too!
           </div>
+        </div>
+        <div class="footer">
           <router-link class="btn btn-primary"
             v-bind:to="{ name: 'ongoing' }">
             Let's do it!
@@ -111,14 +117,11 @@
           <div class="challenge-header-gradient"></div>
         </div>
         <div class="ct-chart ct-perfect-fourth" id="progress-chart"></div>
-        <!-- <button class="simulation-button"
-          v-on:click="startSimulation">
-          <p><span class="icon-play"></span></p>
-          Simulate
-        </button> -->
         <div class="content-wrapper">
           <h2 class="subtitle">{{ currentSteps }} of {{ totalSteps }} steps</h2>
           <p class="ongoing-status">{{ statusText }}</p>
+        </div>
+        <div class="footer">
           <router-link class="btn"
             v-bind:to="{ name: 'success' }"
             v-bind:class="!done ? 'disabled' : ''">
@@ -151,6 +154,8 @@
           <div class="content-box">
             Good job! If everyone acted like <strong class="core-secondary-color">you</strong> did today, we would reduce this year's <strong class="core-light-color">world-wide</strong> Carbon Dioxide emissions by two thirds, and the <strong class="core-color">Swedish</strong> part by half.
           </div>
+        </div>
+        <div class="footer">
           <router-link class="btn disabled"
             v-bind:to="{ name: 'challenge' }">
             Give me another challenge!
