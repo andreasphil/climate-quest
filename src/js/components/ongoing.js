@@ -1,6 +1,6 @@
 (function(exports)
 {
-  exports.components = exports.components || {};
+  exports.components = exports.components || {}
   exports.components.Ongoing = Vue.component('ongoing',
   {
     data: function()
@@ -69,6 +69,9 @@
       // Counts the status up until the goal is reached
       startSimulation: function()
       {
+        // Announce challenge start
+        exports.challengeStatus = 'ongoing'
+
         // Reset simulation if it was already played
         if (this.status === 100)
           this.status = 1
@@ -78,7 +81,10 @@
           this.status += 100
 
           if (this.status >= this.totalSteps)
+          {
             window.clearInterval(this.simulation)
+            exports.challengeStatus = 'completed'
+          }
         }
 
         let count = () =>
@@ -109,6 +115,7 @@
       status: function(oldVal, newVal)
       {
         this.updateChart(newVal)
+        exports.stepCount = newVal
       }
     },
 
@@ -118,6 +125,9 @@
     {
       let chartData = { series: [ this.status, (this.chartOptions.total - this.status) ] }
       this.chart = new Chartist.Pie('#progress-chart', chartData, this.chartOptions)
+
+      // Restore previous status
+      this.status = exports.stepCount
 
       window.setTimeout(() =>
       {

@@ -1,6 +1,6 @@
 (function(exports)
 {
-  exports.components = exports.components || {};
+  exports.components = exports.components || {}
   exports.components.Success = Vue.component('success',
   {
     data: function()
@@ -57,4 +57,4 @@
       })
     }
   })
-})(window);
+})(window)

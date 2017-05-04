@@ -2,30 +2,31 @@
 {
   $(document).ready(() =>
   {
-    var routes =
+    let routes =
     [
       { path: '/', name: 'index', component: exports.components.Home },
+      { path: '/overview', name: 'overview', component: exports.components.Overview },
       { path: '/introduction', name: 'introduction', component: exports.components.Introduction },
       { path: '/challenge', name: 'challenge', component: exports.components.Challenge },
       { path: '/progress', name: 'ongoing', component: exports.components.Ongoing },
       { path: '/success', name: 'success', component: exports.components.Success }
-    ];
+    ]
 
-    var router = new VueRouter(
+    let router = new VueRouter(
     {
       routes,
       scrollBehavior: function(to, from, savedPositions)
       {
         // Scroll to top whenever the path changes
-        return { x: 0, y: 0 };
+        return { x: 0, y: 0 }
       }
-    });
+    })
 
     // Root instance
-    var climateQuest = new Vue(
+    let climateQuest = new Vue(
     {
       router,
       el: '#application'
-    });
+    })
   })
 })(window)

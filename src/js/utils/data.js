@@ -1,9 +1,13 @@
-(function(ns)
+(function(exports)
 {
-  ns.data = ns.data || {};
+  exports.data = exports.data || {}
+
+  // Global challenge status
+  exports.challengeStatus = 'new'
+  exports.stepCount = 0
 
   // CO2 Emission data fixtures for Sweden and the world; taken from http://data.worldbank.org
-  ns.data.co2Emissions =
+  exports.data.co2Emissions =
   [[
     5.52862826872355,
     5.66312437439099,
@@ -46,12 +50,12 @@
     5.47495712076762,
     4.94230082776452,
     4.61718188417353
-  ]];
+  ]]
 
-  ns.data.result =
+  exports.data.result =
   [
-    [ns.data.co2Emissions[0][19]],
-    [ns.data.co2Emissions[1][19]],
-    [(ns.data.co2Emissions[1][19] / 2)],
-  ];
-})(window);
+    [exports.data.co2Emissions[0][19]],
+    [exports.data.co2Emissions[1][19]],
+    [(exports.data.co2Emissions[1][19] / 2)],
+  ]
+})(window)

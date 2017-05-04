@@ -39,9 +39,65 @@
         </div>
         <div class="footer">
           <router-link class="btn"
-            v-bind:to="{ name: 'introduction' }">
+            v-bind:to="{ name: 'overview' }">
             I'm in!
           </router-link>
+        </div>
+      </div>
+    </script>
+
+    <!-- Overview Screen -->
+    <script type="text/x-template" id="overview-template">
+      <div class="overview-view">
+        <div class="header">
+          <h2>Overview</h2>
+        </div>
+        <div class="overview-header-image">
+          <div class="overview-header-gradient"></div>
+        </div>
+        <div class="content-wrapper">
+          <h2 class="subtitle">Today's Challenge</h2>
+          <div class="content-box"
+            v-if="challengeStatus !== 'completed'">
+            <router-link tag="div"
+              class="challenge"
+              v-if="challengeStatus === 'new'"
+              v-bind:to="{ name: 'introduction' }">
+              <h3>Shanks's Pony</h3>
+              <span>Press here to start!</span>
+            </router-link>
+            <router-link tag="div"
+              class="challenge"
+              v-if="challengeStatus === 'ongoing'"
+              v-bind:to="{ name: 'ongoing' }">
+              <h3>Shanks's Pony</h3>
+              {{ stepCount }} of 10.000 steps
+            </router-link>
+          </div>
+          <div class="content-box"
+            v-else>
+            All done! Come back tomorrow for a new challenge.
+          </div>
+          <h2 class="subtitle">Past challenges</h2>
+          <div class="content-box past-challenges">
+            <div class="challenge"
+              v-if="challengeStatus === 'completed'">
+              <h3>Shanks's Pony</h3>
+              Walk 10.000 steps.
+            </div>
+            <div class="challenge">
+              <h3>First name</h3>
+              description
+            </div>
+            <div class="challenge">
+              <h3>Second name</h3>
+              description
+            </div>
+            <div class="challenge">
+              <h3>Third name</h3>
+              description
+            </div>
+          </div>
         </div>
       </div>
     </script>
@@ -51,8 +107,8 @@
       <div class="introduction-view">
         <div class="header">
           <router-link tag="span"
-            class="float-left icon-cross"
-            v-bind:to="{ name: 'index' }">
+            class="float-left icon-menu"
+            v-bind:to="{ name: 'overview' }">
           </router-link>
           <h2>CO2 Emissions</h2>
         </div>
@@ -95,7 +151,7 @@
           </div>
         </div>
         <div class="footer">
-          <router-link class="btn btn-primary"
+          <router-link class="btn"
             v-bind:to="{ name: 'ongoing' }">
             Let's do it!
           </router-link>
@@ -108,8 +164,8 @@
       <div class="ongoing-view">
         <div class="header">
           <router-link tag="span"
-            class="float-left icon-arrow-left"
-            v-bind:to="{ name: 'challenge' }">
+            class="float-left icon-menu"
+            v-bind:to="{ name: 'overview' }">
           </router-link>
           <h2>Shanks's Pony</h2>
         </div>
@@ -123,8 +179,8 @@
         </div>
         <div class="footer">
           <router-link class="btn"
-            v-bind:to="{ name: 'success' }"
-            v-bind:class="!done ? 'disabled' : ''">
+            v-bind:class="!done ? 'disabled' : ''"
+            v-bind:to="{ name: 'success' }">
             Show me the results!
           </router-link>
         </div>
@@ -136,12 +192,8 @@
       <div class="success-view">
         <div class="header">
           <router-link tag="span"
-            class="float-left icon-cross"
-            v-bind:to="{ name: 'ongoing' }">
-          </router-link>
-          <router-link tag="span"
-            class="float-right icon-power"
-            v-bind:to="{ name: 'index' }">
+            class="float-left icon-menu"
+            v-bind:to="{ name: 'overview' }">
           </router-link>
           <h2>Well done!</h2>
         </div>
@@ -156,9 +208,9 @@
           </div>
         </div>
         <div class="footer">
-          <router-link class="btn disabled"
-            v-bind:to="{ name: 'challenge' }">
-            Give me another challenge!
+          <router-link class="btn"
+            v-bind:to="{ name: 'overview' }">
+            Leave
           </router-link>
         </div>
       </div>
