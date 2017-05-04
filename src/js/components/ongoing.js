@@ -61,6 +61,13 @@
           return this.totalSteps
         else
           return Math.round(this.status)
+      },
+
+      iceWidth: function()
+      {
+        let relativeProgress = (this.status / this.totalSteps)
+        let width = (Math.round(relativeProgress * 100)) + 75
+        return width
       }
     },
 
@@ -91,7 +98,7 @@
         {
           this.status += 1
 
-          if (this.status >= 50)
+          if (this.status >= 10)
           {
             window.clearInterval(this.simulation)
             this.simulation = window.setInterval(countFast, 50)

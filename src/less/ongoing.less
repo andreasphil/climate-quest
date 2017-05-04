@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------------
-//  Ongoing challenge page
+// Ongoing challenge page
 // -----------------------------------------------------------------------------
 
 .ongoing-view
@@ -11,37 +11,42 @@
 .ongoing-status
 {
   font-size: (@body-font-size * 1.2);
+  margin-bottom: @spacing-medium;
 }
 
-.simulation-button
+// -----------------------------------------------------------------------------
+// Polar bear
+// -----------------------------------------------------------------------------
+
+.bear-wrapper
 {
-  background-color: fade(@control-color-warning, 40%);
-  border-radius: @border-radius;
-  border: none;
-  color: @core-light-color;
-  font-family: @body-font-family;
-  left: 30%;
-  outline: none;
-  padding: @spacing-small;
-  position: fixed;
-  top: 17.5rem;
-  transition: background-color 0.3s ease;
-  width: 40%;
+  border-radius: 50%;
+  padding-top: 7.0rem;
+  position: absolute;
+  top: 10.0rem;
+  width: 100%;
+}
 
-  &:hover
-  {
-    background-color: fade(@control-color-warning, 60%)
-  }
+.bear-animal, .bear-ice
+{
+  display: block;
+  margin: auto;
+}
 
-  span
-  {
-    font-size: (@body-font-size * 1.5);
-  }
+.bear-animal
+{
+  width: 8.0rem;
+}
+
+.bear-ice
+{
+  margin-top: 0.2rem;
+  max-width: 17.5rem;
 }
 
 
 // -----------------------------------------------------------------------------
-//  Data
+// Data
 // -----------------------------------------------------------------------------
 
 .ct-series-a .ct-slice-donut

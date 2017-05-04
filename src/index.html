@@ -173,9 +173,23 @@
           <div class="challenge-header-gradient"></div>
         </div>
         <div class="ct-chart ct-perfect-fourth" id="progress-chart"></div>
+        <div class="bear-wrapper">
+          <img src="img/polarBear.svg" class="bear-animal"/>
+          <img src="img/ice.svg"
+            class="bear-ice"
+            v-bind:width="iceWidth + 'px'"/>
+        </div>
         <div class="content-wrapper">
           <h2 class="subtitle">{{ currentSteps }} of {{ totalSteps }} steps</h2>
           <p class="ongoing-status">{{ statusText }}</p>
+          <h2 class="subtitle">Challenge</h2>
+          <div class="content-box">
+            One of the main sources of CO2 emissions is the burning of fossil fuels, for example by cars. Therefore, try to walk instead of driving whenever possible. We'll get you started with 10.000 steps today – bonus: It's healthy too!
+          </div>
+          <h2 class="subtitle">Background</h2>
+          <div class="content-box">
+            Carbon Dioxide is one of the greenhouse gases that contribute to global warming by preventing heat from leaving the Earth's atmosphere. Altough you <strong class="core-color">Swedes</strong> managed to decrease your emissions significantly over the last 20 years, the <strong class="core-light-color">world-wide</strong> average shows that there is still a lot of work to do.
+          </div>
         </div>
         <div class="footer">
           <router-link class="btn"
