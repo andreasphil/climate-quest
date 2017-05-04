@@ -25,7 +25,7 @@
       // Return true if the goal is reached
       done: function()
       {
-        return this.status === this.totalSteps
+        return this.status >= this.totalSteps
       },
 
       // Return a message depending on the progress
@@ -48,7 +48,7 @@
         else if (this.status >= 200)
           statusText = 'Just getting started!'
         else
-          statusText = 'The first step is the hardest.'
+          statusText = 'The first steps are the hardest.'
 
         return statusText
       },
