@@ -26,23 +26,23 @@
             showLabel: false
           }
         }
-      };
+      }
     },
 
     template: '#success-template',
 
     mounted: function()
     {
-      var chart = new Chartist.Bar('#result-chart', this.chartData, this.chartOptions);
-      var sequence = 0;
+      let chart = new Chartist.Bar('#result-chart', this.chartData, this.chartOptions)
+      let sequence = 0
 
-      chart.on('created', function()
+      chart.on('created', () =>
       {
-        sequence = 0;
-      });
+        sequence = 0
+      })
 
       // Animation of bars building up
-      chart.on('draw', function(data)
+      chart.on('draw', (data) =>
       {
         data.element.animate(
         {
@@ -53,8 +53,8 @@
             to: data.y2,
             dur: 750
           }
-        });
-      });
+        })
+      })
     }
-  });
+  })
 })(window);

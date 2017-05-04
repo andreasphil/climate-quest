@@ -34,8 +34,8 @@
 
     mounted: function()
     {
-      var chart = new Chartist.Line('#emissions-chart', this.chartData, this.chartOptions)
-      var sequence = 0
+      let chart = new Chartist.Line('#emissions-chart', this.chartData, this.chartOptions)
+      let sequence = 0
 
       chart.on('created', () => { sequence = 0 })
 

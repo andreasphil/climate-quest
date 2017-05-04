@@ -31,7 +31,7 @@
       // Return a message depending on the progress
       statusText: function()
       {
-        var statusText
+        let statusText
 
         if (this.status >= this.totalSteps)
           statusText = 'Well done!'
@@ -73,7 +73,7 @@
         if (this.status === 100)
           this.status = 1
 
-        var countFast = () =>
+        let countFast = () =>
         {
           this.status += 100
 
@@ -81,7 +81,7 @@
             window.clearInterval(this.simulation)
         }
 
-        var count = () =>
+        let count = () =>
         {
           this.status += 1
 
@@ -98,7 +98,7 @@
       // Redraw the chart with new data
       updateChart: function(progress)
       {
-        var chartData = { series: [ progress, (this.chartOptions.total - progress) ] }
+        let chartData = { series: [ progress, (this.chartOptions.total - progress) ] }
         this.chart.update(chartData)
       }
     },
@@ -116,7 +116,7 @@
 
     mounted: function()
     {
-      var chartData = { series: [ this.status, (this.chartOptions.total - this.status) ] }
+      let chartData = { series: [ this.status, (this.chartOptions.total - this.status) ] }
       this.chart = new Chartist.Pie('#progress-chart', chartData, this.chartOptions)
 
       window.setTimeout(() =>
