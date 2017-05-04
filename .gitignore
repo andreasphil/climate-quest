@@ -4,3 +4,5 @@ dist
 node_modules
 src/components
 src/css
+src/index.js
+src/index.js.map

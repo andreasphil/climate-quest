@@ -1,12 +1,14 @@
 var gulp = require('gulp');
 
+var babel = require('gulp-babel');
 var cleancss = require('gulp-clean-css');
 var concat = require('gulp-concat');
 var del = require('del');
+var eslint = require('gulp-eslint');
 var htmlmin = require('gulp-htmlmin');
-var jshint = require('gulp-jshint');
 var less = require('gulp-less');
 var replace = require('gulp-replace');
+var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 
 
@@ -18,8 +20,18 @@ var uglify = require('gulp-uglify');
 gulp.task('lint', function()
 {
 	return gulp.src('./src/js/**/*.js')
-		.pipe(jshint())
-		.pipe(jshint.reporter('default'));
+		.pipe(eslint.format());
+});
+
+// Transpile ES6
+gulp.task('babel', ['lint'], function()
+{
+	return gulp.src('./src/js/**/*.js')
+		.pipe(sourcemaps.init())
+		.pipe(babel())
+		.pipe(concat('index.js'))
+		.pipe(sourcemaps.write('.'))
+		.pipe(gulp.dest('./src'))
 });
 
 // Compile LESS in source folder
@@ -37,12 +49,12 @@ gulp.task('less-source', function()
 // Watch for javascript/less file changes
 gulp.task('watch', function()
 {
-	gulp.watch('./src/js/**/*.js', ['lint']);
+	gulp.watch('./src/js/**/*.js', ['babel']);
 	gulp.watch('./src/less/**/*.less', ['less-source']);
 });
 
 // Default task: Lint JS, compile LESS and watch for changes
-gulp.task('default', ['lint', 'less-source', 'watch']);
+gulp.task('default', ['babel', 'less-source', 'watch']);
 
 
 // -----------------------------------------------------------------------------------------------
@@ -86,19 +98,12 @@ gulp.task('build-js-libs', function()
 // Concatenate and compress javascript
 gulp.task('build-js-app', function()
 {
-	return gulp.src(
-		[
-			'./src/js/components/challenge.js',
-			'./src/js/components/home.js',
-			'./src/js/components/introduction.js',
-			'./src/js/components/ongoing.js',
-			'./src/js/components/success.js',
-			'./src/js/utils/data.js',
-			'./src/js/default.js'
-		])
-		.pipe(concat('application.min.js'))
-		.pipe(uglify())
-		.pipe(gulp.dest('./dist/js'));
+	return gulp.src('./src/js/**/*.js')
+		.pipe(sourcemaps.init())
+		.pipe(babel())
+		.pipe(concat('index.js'))
+		.pipe(sourcemaps.write('.'))
+		.pipe(gulp.dest('./dist'))
 });
 
 // Compile and compress LESS
