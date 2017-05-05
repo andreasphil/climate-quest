@@ -119,10 +119,16 @@ gulp.task('build-less', function()
 });
 
 // Copy fonts from the fonts folder
-gulp.task('build-copy-fonts', function()
+gulp.task('build-copy-feather', function()
 {
 	return gulp.src('./src/components/feather/webfont/feather-webfont/fonts/*.{eot,svg,ttf,woff,otf}')
 		.pipe(gulp.dest('./dist/components/feather/webfont/feather-webfont/fonts'));
+});
+
+gulp.task('build-copy-fa', function()
+{
+	return gulp.src('./src/components/font-awesome/fonts/*.{eot,svg,ttf,woff,otf}')
+		.pipe(gulp.dest('./dist/components/font-awesome/fonts'));
 });
 
 // Copy images from the img folder
@@ -138,4 +144,4 @@ gulp.task('build-copy-images', function()
 
 // Build task: Build HTML, javascript and LESS and copy fonts and images
 gulp.task('build', ['build-html', 'build-js-libs', 'build-js-app', 'build-less',
-	'build-copy-fonts', 'build-copy-images']);
+	'build-copy-feather', 'build-copy-fa', 'build-copy-images']);

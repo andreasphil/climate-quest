@@ -25,6 +25,7 @@
     "chartist": "^0.10.1"
   },
   "dependencies": {
-    "feather": "anphil/feather"
+    "feather": "anphil/feather",
+    "font-awesome": "fontawesome#^4.7.0"
   }
 }
