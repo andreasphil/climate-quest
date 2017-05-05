@@ -71,8 +71,7 @@ gulp.task('clean', function()
 gulp.task('build-html', function()
 {
 	var scriptReplacePattern = /(<!-- Replace Scripts -->)[\s\S]*(<!-- Replace Scripts -->)/g;
-	var scriptReplaceString = '<script type="text/javascript" src="js/libs.min.js"></script>'
-		+ '<script type="text/javascript" src="js/application.min.js"></script>'
+	var scriptReplaceString = '<script type="text/javascript" src="js/libs.min.js"></script>';
 
 	return gulp.src('./src/*.html')
 		.pipe(replace(scriptReplacePattern, scriptReplaceString))
@@ -129,10 +128,14 @@ gulp.task('build-copy-fonts', function()
 // Copy images from the img folder
 gulp.task('build-copy-images', function()
 {
-	return gulp.src('./src/img/*.png')
+	return gulp.src(
+		[
+			'./src/img/*.png',
+			'./src/img/*.svg'
+		])
 		.pipe(gulp.dest('./dist/img'))
 });
 
 // Build task: Build HTML, javascript and LESS and copy fonts and images
-gulp.task('build', ['clean', 'build-html', 'build-js-libs', 'build-js-app', 'build-less',
-	'build-copy-fonts', 'build-copy-images' ]);
+gulp.task('build', ['build-html', 'build-js-libs', 'build-js-app', 'build-less',
+	'build-copy-fonts', 'build-copy-images']);
