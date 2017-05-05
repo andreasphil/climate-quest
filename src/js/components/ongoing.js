@@ -98,7 +98,7 @@
         {
           this.status += 1
 
-          if (this.status >= 10)
+          if (this.status >= 50)
           {
             window.clearInterval(this.simulation)
             this.simulation = window.setInterval(countFast, 50)
