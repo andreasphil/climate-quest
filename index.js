@@ -161,7 +161,7 @@
         var count = function count() {
           _this.status += 1;
 
-          if (_this.status >= 50) {
+          if (_this.status >= 25) {
             window.clearInterval(_this.simulation);
             _this.simulation = window.setInterval(countFast, 50);
           }
