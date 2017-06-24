@@ -2,7 +2,9 @@
 
 ![Screenshot](screenshot.png)
 
-ClimateQuest is a prototype that explores a playful approach of presenting data related to global warming. It presents you with a topic, gives you a related challenge and thereby demonstrates how everyone has the potential to make an impact. It was developed from scratch within two days during the course [Prototyping Interaction](https://www.umu.se/en/education/courses/prototyping-interaction) in the [Human Computer Interaction and Social Media](https://www.umu.se/en/education/master/masters-programme-in-human-computer-interaction-and-social-media/) Master's program at [Umeå University](http://www.umu.se/english), and iterated on during my Master's thesis. The goal of the assignment was to prototype ways of interacting with open data based on Paul Dourish's ideas on Embodied Interaction.
+ClimateQuest is a prototype that explores a playful approach of presenting data related to global warming. It presents you with a topic, gives you a related challenge and thereby demonstrates how everyone has the potential to make an impact. It was developed from scratch within two days during the course [Prototyping Interaction](https://www.umu.se/en/education/courses/prototyping-interaction) in the [Human Computer Interaction and Social Media](https://www.umu.se/en/education/master/masters-programme-in-human-computer-interaction-and-social-media/) Master's program at [Umeå University](http://www.umu.se/english). The goal of the assignment was to prototype ways of interacting with open data based on Paul Dourish's ideas on Embodied Interaction.
+
+Together with a fellow student, we iterated on the project during our Master's thesis. This time, however, we took a different perspective and focused on how Embodied Interaction can inform and motivate action in the context of self-tracking. The thesis is published via [DiVa](http://urn.kb.se/resolve?urn=urn:nbn:se:umu:diva-136555).
 
 You can access a live version of the prototype at:
 
