@@ -8,8 +8,8 @@ Together with a fellow student, we iterated on the project during our Master's t
 
 You can access a live version of the prototype at:
 
-- <http://anphil.github.io/climate-quest> (for mobile devices)
-- <http://anphil.github.io/climate-quest/frame.html> (for Desktops)
+- <http://andrsphil.github.io/climate-quest> (for mobile devices)
+- <http://andrsphil.github.io/climate-quest/frame.html> (for Desktops)
 
 ## Browser Compatibility
 
